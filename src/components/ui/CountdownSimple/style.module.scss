@@ -1,0 +1,17 @@
+.timer {
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  line-height: 1;
+  gap: 0 3px;
+  width: 100%;
+
+  & > div {
+    display: inline-flex;
+    align-items: flex-end;
+  }
+
+  i {
+    display: inline-block;
+  }
+}

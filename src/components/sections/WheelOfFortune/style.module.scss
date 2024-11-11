@@ -1,0 +1,48 @@
+.wheel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: var(--global-bottom-padding);
+  flex: 1;
+
+  &__title {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    min-width: 358px;
+    flex: 1;
+
+    &_outer {
+      width: 520px;
+      height: 520px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      &_static {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &__roulette {
+    position: absolute !important;
+    left: 50%;
+    top: 50%;
+    margin-left: -143px;
+    margin-top: -143px;
+    z-index: 5;
+  }
+}

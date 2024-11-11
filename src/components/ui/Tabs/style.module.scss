@@ -1,0 +1,53 @@
+.tabs {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+
+  &__controls {
+    display: flex;
+    gap: 0 4px;
+  }
+
+  &__control {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--tab-text-color);
+    background-color: var(--tab-bg-color);
+    display: inline-flex;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+    transition: all 0.3s ease 0s;
+
+    &_active {
+      color: var(--button-bg-primary);
+      background-color: var(--tab-bg-active);
+      pointer-events: none;
+    }
+
+    &:first-child {
+      clip-path: polygon(0 8px, 8px 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    &:last-child {
+      clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+    }
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  &__panel {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+  }
+}

@@ -157,6 +157,14 @@ textarea {
   }
 }
 
+button {
+  padding: 10px;
+  background-color: var(--stroke-dark);
+  color: var(--stroke-light);
+  border-radius: 4px;
+  margin: 0 10px;
+}
+
 .form-control {
   position: relative;
   display: flex;

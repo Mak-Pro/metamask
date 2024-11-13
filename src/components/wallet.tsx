@@ -7,8 +7,6 @@ export const Wallet = () => {
   const { connectors, connect, status, error } = useConnect();
   const { disconnect } = useDisconnect();
 
-  console.log(connectors);
-
   useEffect(() => {
     if (typeof window !== undefined) {
       window.open = (function (open) {
@@ -41,7 +39,16 @@ export const Wallet = () => {
 
       <div>
         <h2>Connect</h2>
-        {connectors.length > 0 &&
+        {connectors.map((connector) => (
+          <button
+            key={connector.uid}
+            onClick={() => connect({ connector })}
+            type="button"
+          >
+            {connector.name}
+          </button>
+        ))}
+        {/* {connectors.length > 0 &&
           connectors.map((connector, i) => {
             if (
               connector.id === "walletConnect" ||
@@ -62,7 +69,7 @@ export const Wallet = () => {
                 </button>
               );
             }
-          })}
+          })} */}
         <div>{status}</div>
         <div>{error?.message}</div>
       </div>
